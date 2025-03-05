@@ -18,8 +18,8 @@ io.on('connection', (socket) => {
     socket.on('disconnect', () => {
         console.log('user disconnected');
     });
-    socket.on('chat message', (msg) => {
-        socket.to(projectId).emit('chat message', msg);   // send message to only the project user
+    socket.on('message', (msg) => {
+        socket.to(projectId).emit('message', msg);   // send message to only the project user
         // io.emit('chat message', msg);          // broadcast message to all users in the project
     });
 });
