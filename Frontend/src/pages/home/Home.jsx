@@ -1,10 +1,10 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
 
 
 const Home = () => {
-    const [projects, setProjects] = React.useState([]);
+    const [projects, setProjects] = useState([]);
     useEffect(() => {
         axios.get('http://localhost:3030/v1/api/projects/list')
         .then((response) => {
@@ -20,12 +20,12 @@ const Home = () => {
         <section>
             <div className="projects">
                 {/* Project list goes here */}
+                <h1>ReCode</h1>
                 {
-                    projects.map((project) => {
+                    projects.map((project,index) => {
                         return (
                             <div className="project">
                                 <h2>{project.name}</h2>
-                                <p>{project.description}</p>
                             </div>
                         )
                     })

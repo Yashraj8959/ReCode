@@ -1,5 +1,5 @@
 import React from 'react'
-const AllRoutes = require('./AllRoutes.jsx')
+import AllRoutes from './AllRoutes.jsx'
 const App = () => {
   return (
     <div>
